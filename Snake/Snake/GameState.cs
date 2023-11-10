@@ -13,7 +13,8 @@ public class GameState
     public Direction Dir { get; private set; }
     public int Score { get; private set; }
     public bool GameOver { get; private set; }
-
+    
+    private readonly LinkedList<Direction> DirBuffer = new LinkedList<Direction>();
     private readonly LinkedList<Position> snakePositions = new LinkedList<Position>();
     private readonly Random random = new Random();
 
@@ -31,7 +32,7 @@ public class GameState
     private void AddSnake()
     {
         int r = Rows / 2;
-        for (int c = 1; c < 3; c++)
+        for (int c = 1; c <= 3; c++)
         {
             Grid[r, c] = GridValue.Snake;
             snakePositions.AddFirst(new Position(r, c));
@@ -93,9 +94,32 @@ public class GameState
         snakePositions.RemoveLast();
     }
 
+    public Direction GetLastDirection()
+    {
+        if (DirBuffer.Count == 0)
+        {
+            return Dir;
+        }
+
+        return DirBuffer.Last.Value;
+    }
+
+    private bool CanChangeDirection(Direction newDir)
+    {
+        if (DirBuffer.Count == 2)
+        {
+            return false;
+        }
+        Direction lastDir = GetLastDirection();
+        return newDir != lastDir && newDir != lastDir.Opposite();
+    }
+
     public void ChangeDirection(Direction dir)
     {
-        Dir = dir;
+        if (CanChangeDirection(dir))
+        {
+            DirBuffer.AddLast(dir);
+        }
     }
 
     private bool OutsideGrid(Position pos)
@@ -119,6 +143,11 @@ public class GameState
 
     public void Move()
     {
+        if (DirBuffer.Count > 0)
+        {
+            Dir = DirBuffer.First.Value;
+            DirBuffer.RemoveFirst();
+        }
         Position newHeadPos = HeadPosition().Translate(Dir);
         GridValue hit = WillHit(newHeadPos);
 
