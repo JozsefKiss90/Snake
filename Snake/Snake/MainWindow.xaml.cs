@@ -17,45 +17,42 @@ using Snake.GameObjects;
 
 namespace Snake
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly Dictionary<GridValue, ImageSource> gridValToImage = new()
         {
             { GridValue.Empty, Images.Empty },
-            { GridValue.Snake, Images.Body },
+            { GridValue.Snake, BodyParts.First()},
             { GridValue.Food, Images.Food }
         };
         private static readonly LinkedList<ImageSource> BodyParts = new LinkedList<ImageSource>(
             new ImageSource[]
             {
-                Images.BodyGreen, 
+                Images.BodyRed,
                 Images.BodyOrange,
                 Images.BodyYellow, 
-                Images.BodyRed,
+                Images.BodyGreen, 
                 Images.BodyLightBlue, 
                 Images.BodyBlue
             });
             
-        private readonly int rows = 15, cols = 15;
+        private static readonly int rows = 15, cols = 15;
         private readonly Image[,] GridImages;
-        private GameState gameState;
+        private static GameState gameState;
         private bool gameRunning;
-        private List<GridValue> SnakeGrids;
+        private static List<GridValue> SnakeGrids;
         public MainWindow()
         {
             InitializeComponent();
             GridImages = SetupGrid();
             gameState = new GameState(rows, cols);
+            SnakeGrids = getSnakeGrids();
         }
 
-        public List<GridValue> getSnakeGrids()
+        private static List<GridValue> getSnakeGrids()
         {
             List<GridValue> snakeBodyGrids = new List<GridValue>();
-            GameGrid.Rows = rows;
-            GameGrid.Columns = cols;
+            
             for (int r = 0; r < rows; r++)
             {
                 for (int c = 0; c < cols; c++)
@@ -66,6 +63,7 @@ namespace Snake
                     }
                 }
             }
+            return snakeBodyGrids;
         }
 
         private async Task RunGame()
@@ -149,6 +147,12 @@ namespace Snake
         {
             throw new NotImplementedException();
         }
+        private void UpdateBodyColors()
+        {
+            var lastBodyPart = BodyParts.Last.Value;
+            BodyParts.RemoveLast();
+            BodyParts.AddFirst(lastBodyPart);
+        }
 
         private void Draw()
         {
@@ -158,14 +162,23 @@ namespace Snake
 
         private void DrawGrid()
         {
+            UpdateBodyColors(); 
             for (int r = 0; r < rows; r++)
             {
                 for (int c = 0; c < cols; c++)
                 {
                     GridValue gridValue = gameState.Grid[r, c];
-                    
-                    GridImages[r, c].Source = gridValToImage[gridValue];
+                    if (gridValue != GridValue.Snake) 
+                    {
+                        GridImages[r, c].Source = gridValToImage[gridValue];
+                    }
                 }
+            }
+            var snakeBody = gameState.SnakePositions().ToList();
+            for (int i = 0; i < snakeBody.Count; i++)
+            {
+                var position = snakeBody[i];
+                GridImages[position.Row, position.Col].Source = BodyParts.ElementAt(i % BodyParts.Count);
             }
         }
 

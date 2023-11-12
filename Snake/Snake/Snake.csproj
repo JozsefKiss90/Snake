@@ -30,6 +30,18 @@
       <Resource Include="Assets\SnakeAssets\Head.png" />
       <None Remove="Assets\SnakeAssets\icon.ico" />
       <Resource Include="Assets\SnakeAssets\icon.ico" />
+      <None Remove="Assets\SnakeAssets\BodyBlue.png" />
+      <Resource Include="Assets\SnakeAssets\BodyBlue.png" />
+      <None Remove="Assets\SnakeAssets\BodyGreen.png" />
+      <Resource Include="Assets\SnakeAssets\BodyGreen.png" />
+      <None Remove="Assets\SnakeAssets\BodyLightBlue.png" />
+      <Resource Include="Assets\SnakeAssets\BodyLightBlue.png" />
+      <None Remove="Assets\SnakeAssets\BodyOrange.png" />
+      <Resource Include="Assets\SnakeAssets\BodyOrange.png" />
+      <None Remove="Assets\SnakeAssets\BodyRed.png" />
+      <Resource Include="Assets\SnakeAssets\BodyRed.png" />
+      <None Remove="Assets\SnakeAssets\BodyYellow.png" />
+      <Resource Include="Assets\SnakeAssets\BodyYellow.png" />
     </ItemGroup>
 
 </Project>

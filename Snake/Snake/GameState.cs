@@ -39,6 +39,20 @@ public class GameState
         }
     }
 
+    public IEnumerable<Position> SnakePositions()
+    {
+        for (int r = 0; r < Rows; r++)
+        {
+            for (int c = 0; c < Cols; c++)
+            {
+                if (Grid[r, c] == GridValue.Snake)
+                {
+                    yield return new Position(r, c);
+                }
+            }
+        }
+    }
+
     private IEnumerable<Position> EmptyPositions()
     {
         for (int r = 0; r < Rows; r++)
