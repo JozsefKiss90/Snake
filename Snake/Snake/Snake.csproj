@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+
+
+    <ItemGroup>
+      <Folder Include="Assets\SnakeAssets\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\SnakeAssets\Body.png" />
+      <Resource Include="Assets\SnakeAssets\Body.png" />
+      <None Remove="Assets\SnakeAssets\DeadBody.png" />
+      <Resource Include="Assets\SnakeAssets\DeadBody.png" />
+      <None Remove="Assets\SnakeAssets\DeadHead.png" />
+      <Resource Include="Assets\SnakeAssets\DeadHead.png" />
+      <None Remove="Assets\SnakeAssets\DroidSansMono.ttf" />
+      <Resource Include="Assets\SnakeAssets\DroidSansMono.ttf" />
+      <None Remove="Assets\SnakeAssets\Empty.png" />
+      <Resource Include="Assets\SnakeAssets\Empty.png" />
+      <None Remove="Assets\SnakeAssets\Food.png" />
+      <Resource Include="Assets\SnakeAssets\Food.png" />
+      <None Remove="Assets\SnakeAssets\Head.png" />
+      <Resource Include="Assets\SnakeAssets\Head.png" />
+      <None Remove="Assets\SnakeAssets\icon.ico" />
+      <Resource Include="Assets\SnakeAssets\icon.ico" />
+      <None Remove="Assets\SnakeAssets\BodyBlue.png" />
+      <Resource Include="Assets\SnakeAssets\BodyBlue.png" />
+      <None Remove="Assets\SnakeAssets\BodyGreen.png" />
+      <Resource Include="Assets\SnakeAssets\BodyGreen.png" />
+      <None Remove="Assets\SnakeAssets\BodyLightBlue.png" />
+      <Resource Include="Assets\SnakeAssets\BodyLightBlue.png" />
+      <None Remove="Assets\SnakeAssets\BodyOrange.png" />
+      <Resource Include="Assets\SnakeAssets\BodyOrange.png" />
+      <None Remove="Assets\SnakeAssets\BodyRed.png" />
+      <Resource Include="Assets\SnakeAssets\BodyRed.png" />
+      <None Remove="Assets\SnakeAssets\BodyYellow.png" />
+      <Resource Include="Assets\SnakeAssets\BodyYellow.png" />
+    </ItemGroup>
+
+</Project>
