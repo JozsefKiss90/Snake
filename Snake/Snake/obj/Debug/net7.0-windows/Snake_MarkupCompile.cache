@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\App.xaml
-11407045341
+1880697045
 
-8-1318930530
+8740295328
 198-759771931
-MainWindow.xaml;
+SnakeWindow.xaml;
 
-False
+True
 

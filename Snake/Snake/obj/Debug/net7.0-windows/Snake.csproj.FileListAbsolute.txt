@@ -3,12 +3,10 @@ C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\bin\Debug\net7.0-windows\Snake.de
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\bin\Debug\net7.0-windows\Snake.runtimeconfig.json
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\bin\Debug\net7.0-windows\Snake.dll
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\bin\Debug\net7.0-windows\Snake.pdb
-C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\MainWindow.g.cs
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\App.g.cs
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\Snake_MarkupCompile.cache
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\Snake_MarkupCompile.lref
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\App.baml
-C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\MainWindow.baml
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\Snake.g.resources
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\Snake.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\Snake.AssemblyInfoInputs.cache
@@ -19,3 +17,5 @@ C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\refint\S
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\Snake.pdb
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\Snake.genruntimeconfig.cache
 C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\ref\Snake.dll
+C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\SnakeWindow.g.cs
+C:\Users\jozsi\RiderProjects\Snake\Snake\Snake\obj\Debug\net7.0-windows\SnakeWindow.baml

@@ -17,7 +17,7 @@ using Snake.GameObjects;
 
 namespace Snake
 {
-    public partial class MainWindow : Window
+    public partial class SnakeWindow : Window
     {
         private readonly Dictionary<GridValue, ImageSource> gridValToImage = new()
         {
@@ -41,7 +41,7 @@ namespace Snake
         private static GameState gameState;
         private bool gameRunning;
         private static List<GridValue> SnakeGrids;
-        public MainWindow()
+        public SnakeWindow()
         {
             InitializeComponent();
             GridImages = SetupGrid();

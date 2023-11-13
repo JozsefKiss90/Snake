@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 namespace Snake.Assets;
@@ -21,6 +22,16 @@ public static class Images
     public readonly static ImageSource DeadHead = LoadImage("DeadHead.png");
     private static ImageSource LoadImage(string filename)
     {
-        return new BitmapImage(new Uri($"../Assets/SnakeAssets/{filename}", UriKind.Relative));
-    } 
+        try
+        {
+          
+            var uri = new Uri($"pack://application:,,,/Snake;component/Assets/SnakeAssets/{filename}", UriKind.Absolute);
+            BitmapImage image = new BitmapImage(uri);
+            return image;
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException($"Failed to load image '{filename}': {ex.Message}", ex);
+        }
+    }
 }
